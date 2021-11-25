@@ -26,7 +26,8 @@ resource "azurerm_key_vault_access_policy" "wf_kv_policy_current" {
 
   secret_permissions = [
     "Get",
-    "Set"
+    "Set",
+    "Delete"
   ]
 }
 
