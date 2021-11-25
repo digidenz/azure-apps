@@ -1,6 +1,6 @@
 # Introduction
 
-This project demonstrates the use of Terraform to provision Azure environments that use Azure App Services to run Linux containers.
+This project demonstrates the use of Terraform and Azure DevOps release pipelines to provision Azure environments for hosting containerised apps under Azure App Service.
 
 # Folder Structure
 * `Terraform/app_modules`: Modules for deploying App Services and their related resources
