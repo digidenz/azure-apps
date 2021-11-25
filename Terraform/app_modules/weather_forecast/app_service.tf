@@ -7,8 +7,8 @@ resource "azurerm_app_service_plan" "wf_app_service_plan" {
   reserved = true
 
   sku {
-    tier = "Free"
-    size = "F1"
+    tier = var.asp_sku.tier
+    size = var.asp_sku.size
   }
 }
 
@@ -35,8 +35,10 @@ resource "azurerm_app_service" "wf_app_service" {
   }
 
   lifecycle {
+    # Ignore properties that will be changed by app deployment from Azure DevOps
     ignore_changes = [
-      site_config[0].linux_fx_version # Deployment of app is managed by Azure DevOps
+      site_config[0].linux_fx_version, 
+      app_settings["DOCKER_CUSTOM_IMAGE_NAME"]
     ]
   }
 }

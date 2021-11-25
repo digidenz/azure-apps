@@ -36,10 +36,6 @@ resource "azurerm_key_vault_secret" "wf_kv_secret_apikey" {
   name         = "apikey"
   value        = var.apikey
   key_vault_id = azurerm_key_vault.wf_kv.id
-
-  lifecycle {
-    ignore_changes = [value, version] # Ignore future changes, to cater for the APIKEY to change outside of Terraform
-  }
 }
 
 resource "azurerm_key_vault_secret" "wf_kv_secret_docker_password" {

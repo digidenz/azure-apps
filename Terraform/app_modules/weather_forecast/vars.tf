@@ -25,3 +25,10 @@ variable "docker_image" {
 variable "docker_image_tag" {
   description = "The tag of docker image to deploy"
 }
+variable "asp_sku" {
+  description = "The SKU for the App Service Plan"
+  type = object({
+    tier = string
+    size = string
+  })
+}

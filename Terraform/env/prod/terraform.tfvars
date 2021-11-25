@@ -1,6 +1,6 @@
 # Environment
-location = "Australia East"
-env      = "dev"
+location = "West Europe"
+env      = "prod"
 
 # App
 wf_docker_repo      = "https://index.docker.io/v1"
